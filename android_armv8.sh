@@ -60,13 +60,7 @@ use_custom_libcxx=false
 use_custom_libcxx_for_host=true
 v8_enable_pointer_compression=false
 '
-ninja -C out.gn/arm64.release -t clean
-ninja -C out.gn/arm64.release wee8
-third_party/android_ndk/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/aarch64-linux-android/bin/strip -g -S -d --strip-debug --verbose out.gn/arm64.release/obj/libwee8.a
-
-node $GITHUB_WORKSPACE/node-script/genBlobHeader.js "android arm64" out.gn/arm64.release/snapshot_blob.bin
+tar cvf arm64.release.tar arm64.release
 
 mkdir -p output/v8/Lib/Android/arm64-v8a
-cp out.gn/arm64.release/obj/libwee8.a output/v8/Lib/Android/arm64-v8a/
-mkdir -p output/v8/Inc/Blob/Android/arm64
-cp SnapshotBlob.h output/v8/Inc/Blob/Android/arm64/
+cp arm64.release.tar output/v8/Lib/Android/arm64-v8a/
