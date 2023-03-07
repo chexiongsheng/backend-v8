@@ -60,7 +60,7 @@ use_custom_libcxx=false
 use_custom_libcxx_for_host=true
 v8_enable_pointer_compression=false
 '
-tar cvf arm64.release.tar arm64.release
+tar cvf out.gn.tar out.gn
 
 mkdir -p output/v8/Lib/Android/arm64-v8a
-cp arm64.release.tar output/v8/Lib/Android/arm64-v8a/
+cp out.gn.tar output/v8/Lib/Android/arm64-v8a/

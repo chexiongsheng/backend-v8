@@ -38,8 +38,8 @@ target_cpu = "arm64"
 v8_enable_pointer_compression = false
 libcxx_abi_unstable = false
 '
-tar cvf arm64.release.tar arm64.release
+tar cvf out.gn.tar out.gn
 
 mkdir -p output/v8/Lib/iOS/arm64
-cp arm64.release.tar output/v8/Lib/iOS/arm64/
+cp out.gn.tar output/v8/Lib/iOS/arm64/
 
