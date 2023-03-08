@@ -40,6 +40,12 @@ target_os = "ios"
 target_cpu = "arm64"
 v8_enable_pointer_compression = false
 libcxx_abi_unstable = false
+is_official_build=true
+symbol_level=0
+v8_enable_v8_checks=false
+v8_enable_debugging_features=false
+use_xcode_clang=true
+ios_deployment_target="7.0"
 '
 tar cvf out.gn.tar out.gn
 
