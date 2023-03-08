@@ -40,14 +40,15 @@ target_os = "ios"
 target_cpu = "arm64"
 v8_enable_pointer_compression = false
 libcxx_abi_unstable = false
+is_official_build=true
+symbol_level=0
+v8_enable_v8_checks=false
+v8_enable_debugging_features=false
+use_xcode_clang=true
+ios_deployment_target="7.0"
 '
-ninja -C out.gn/arm64.release -t clean
-ninja -C out.gn/arm64.release wee8
-strip -S out.gn/arm64.release/obj/libwee8.a
-
-node $GITHUB_WORKSPACE/node-script/genBlobHeader.js "ios arm64" out.gn/arm64.release/snapshot_blob.bin
+tar cvf out.gn.tar out.gn
 
 mkdir -p output/v8/Lib/iOS/arm64
-cp out.gn/arm64.release/obj/libwee8.a output/v8/Lib/iOS/arm64/
-mkdir -p output/v8/Inc/Blob/iOS/arm64
-cp SnapshotBlob.h output/v8/Inc/Blob/iOS/arm64/
+cp out.gn.tar output/v8/Lib/iOS/arm64/
+
