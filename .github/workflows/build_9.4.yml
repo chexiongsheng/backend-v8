@@ -180,7 +180,7 @@ jobs:
           
   build_macos:
     name: macOS
-    runs-on: macos-11
+    runs-on: macos-13
     steps:
     - name: use python3.9
       run: |
@@ -188,6 +188,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Run build script
       run: |
+        sudo xcode-select -switch "/Applications/Xcode_14.3.1.app"
         export PATH=/usr/local/opt/python@3.9/libexec/bin:$PATH
         cd $GITHUB_WORKSPACE
         npm i
@@ -200,7 +201,7 @@ jobs:
           
   build_macos_arm64:
     name: macOS with apple m1
-    runs-on: macos-11
+    runs-on: macos-13
     steps:
     - name: use python3.9
       run: |
@@ -208,6 +209,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Run build script
       run: |
+        sudo xcode-select -switch "/Applications/Xcode_14.3.1.app"
         export PATH=/usr/local/opt/python@3.9/libexec/bin:$PATH
         cd $GITHUB_WORKSPACE
         npm i
@@ -220,7 +222,7 @@ jobs:
         
   build_macos_dll:
     name: macOS-DLL
-    runs-on: macos-11
+    runs-on: macos-13
     steps:
     - name: use python3.9
       run: |
@@ -228,6 +230,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Run build script
       run: |
+        sudo xcode-select -switch "/Applications/Xcode_14.3.1.app"
         export PATH=/usr/local/opt/python@3.9/libexec/bin:$PATH
         cd $GITHUB_WORKSPACE
         npm i
@@ -240,7 +243,7 @@ jobs:
         
   build_macos_arm64_dll:
     name: macOS-DLL with apple m1
-    runs-on: macos-11
+    runs-on: macos-13
     steps:
     - name: use python3.9
       run: |
@@ -248,6 +251,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Run build script
       run: |
+        sudo xcode-select -switch "/Applications/Xcode_14.3.1.app"
         export PATH=/usr/local/opt/python@3.9/libexec/bin:$PATH
         cd $GITHUB_WORKSPACE
         npm i
@@ -260,7 +264,7 @@ jobs:
 
   build_ios:
     name: iOS
-    runs-on: macos-11
+    runs-on: macos-13
     steps:
     - name: use python3.9
       run: |
@@ -268,6 +272,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Run build script
       run: |
+        sudo xcode-select -switch "/Applications/Xcode_14.3.1.app"
         export PATH=/usr/local/opt/python@3.9/libexec/bin:$PATH
         cd $GITHUB_WORKSPACE
         npm i
@@ -280,7 +285,7 @@ jobs:
   
   build_ios_simulator:
     name: iOS simulator
-    runs-on: macos-11
+    runs-on: macos-13
     steps:
     - name: use python3.9
       run: |
@@ -288,6 +293,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Run build script
       run: |
+        sudo xcode-select -switch "/Applications/Xcode_14.3.1.app"
         export PATH=/usr/local/opt/python@3.9/libexec/bin:$PATH
         cd $GITHUB_WORKSPACE
         npm i
