@@ -61,6 +61,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Run build script
       run: |
+        mkdir -p ~/v8/v8/output/v8_${{github.event.inputs.v8_revision}}
         touch ~/v8/v8/output/v8_${{github.event.inputs.v8_revision}}/aabbcc.txt
     - uses: actions/upload-artifact@v2
       with:
