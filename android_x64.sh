@@ -84,6 +84,7 @@ if [ "$VERSION" == "10.6.194" ]; then
     use_custom_libcxx_for_host=true
     v8_enable_pointer_compression=false
     v8_enable_sandbox = false
+    v8_enable_lite_mode=true
     '
 else
     python ./tools/dev/v8gen.py x64.release -vv -- '
@@ -101,6 +102,7 @@ else
     use_custom_libcxx=false
     use_custom_libcxx_for_host=true
     v8_enable_pointer_compression=false
+    v8_enable_lite_mode=true
     '
 fi
 ninja -C out.gn/x64.release -t clean

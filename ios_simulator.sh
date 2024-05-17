@@ -46,6 +46,7 @@ if [ "$VERSION" == "10.6.194" ]; then
     libcxx_abi_unstable = false
     v8_enable_sandbox = false
     use_custom_libcxx=false
+    v8_enable_lite_mode=true
     '
 else
     python ./tools/dev/v8gen.py x64.release -vv -- '
@@ -59,6 +60,7 @@ else
     target_cpu = "x64"
     v8_enable_pointer_compression = false
     libcxx_abi_unstable = false
+    v8_enable_lite_mode=true
     '
 fi
 ninja -C out.gn/x64.release -t clean

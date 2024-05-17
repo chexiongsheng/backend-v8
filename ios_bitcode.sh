@@ -49,6 +49,7 @@ if [ "$VERSION" == "10.6.194" ]; then
     libcxx_abi_unstable = false
     v8_enable_sandbox = false
     use_custom_libcxx=false
+    v8_enable_lite_mode=true
     '
 else
     python ./tools/dev/v8gen.py arm64.release -vv -- '
@@ -65,6 +66,7 @@ else
     enable_ios_bitcode = true
     symbol_level = 0
     libcxx_abi_unstable = false
+    v8_enable_lite_mode=true
     '
 fi
 ninja -C out.gn/arm64.release -t clean
