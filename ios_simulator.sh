@@ -64,9 +64,9 @@ else
     '
 fi
 ninja -C out.gn/x64.release -t clean
-ninja -C out.gn/x64.release wee8
-strip -v -S out.gn/x64.release/obj/libwee8.a
+ninja -C out.gn/x64.release v8_monolith
+#strip -v -S out.gn/x64.release/obj/libwee8.a
 
 mkdir -p output/v8/Lib/iOS/x64
-cp out.gn/x64.release/obj/libwee8.a output/v8/Lib/iOS/x64/
+cp out.gn/x64.release/obj/libv8_monolith.a output/v8/Lib/iOS/x64/
 mkdir -p output/v8/Inc/Blob/iOS/x64
