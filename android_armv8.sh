@@ -85,6 +85,7 @@ if [ "$VERSION" == "10.6.194" ]; then
     v8_enable_pointer_compression=false
     v8_enable_sandbox = false
     v8_enable_lite_mode=true
+    v8_monolithic=true
     '
 else
     python ./tools/dev/v8gen.py arm64.release -vv -- '
@@ -103,6 +104,7 @@ else
     use_custom_libcxx_for_host=true
     v8_enable_pointer_compression=false
     v8_enable_lite_mode=true
+    v8_monolithic=true
     '
 fi
 ninja -C out.gn/arm64.release -t clean
