@@ -97,9 +97,6 @@ ninja -C out.gn/x64.release -t clean
 ninja -v -C out.gn/x64.release wee8
 
 mkdir -p output/v8/Lib/Linux
-if [ "$NEW_WRAP" == "with_new_wrap" ]; then 
-  bash $GITHUB_WORKSPACE/rename_symbols_posix.sh x64 output/v8/Lib/Linux/
-fi
 cp out.gn/x64.release/obj/libwee8.a output/v8/Lib/Linux/
 mkdir -p output/v8/Bin/Linux
 find out.gn/ -type f -name v8cc -exec cp "{}" output/v8/Bin/Linux \;
